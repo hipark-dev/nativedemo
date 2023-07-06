@@ -23,7 +23,7 @@ final class WebViewReactor: Reactor {
     }
     
     enum WebConstant {
-        static let hostURL: String = "http://localhost:8000/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg2MDcwMjksImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.f9l68qTM_sNjIOikoX2G24RD4hnWiG132QY79SW4yjo"
+        static let hostURL: String = "http://localhost:8000/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg2OTM1NTgsImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.iwnlS8efgE4ZLEh8TxVkS_-IRx1OEbG8NA5PbtH_d9c"
 //        static let hostURL: String = "https://devfs.fingerservice.co.kr/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg2MDcwMjksImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.f9l68qTM_sNjIOikoX2G24RD4hnWiG132QY79SW4yjo"
     }
     
