@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="DataCubeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wC-mX-TTX">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="896" translatesAutoresizingMaskIntoConstraints="NO" id="bg0-Fw-XT2" userLabel="Contents View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-Ve-Bg1">
+                                                <rect key="frame" x="20" y="120" width="374" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="u5P-Re-yEf"/>
+                                                </constraints>
+                                                <string key="text">서비스의 시작!
+DataCube와 함께</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-XU-EIQ" customClass="AnimationView" customModule="Lottie">
+                                                <rect key="frame" x="47" y="260" width="320" height="250"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="dUb-SY-j3u"/>
+                                                    <constraint firstAttribute="height" constant="250" id="rv5-yH-gbJ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="data_cube"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s43-IO-C5m">
+                                                <rect key="frame" x="48.5" y="630" width="317" height="60"/>
+                                                <color key="backgroundColor" red="0.20392156862745098" green="0.82745098039215681" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="5oX-fn-5sX"/>
+                                                    <constraint firstAttribute="width" constant="317" id="hUM-cA-Xe4"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Go WebView">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pushLoginView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mBf-jp-gw6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbN-GN-sfH">
+                                                <rect key="frame" x="48.5" y="700" width="317" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="317" id="7ax-C5-YBx"/>
+                                                    <constraint firstAttribute="height" constant="60" id="CAN-ev-oOn"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Go Safari">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pushSignupView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lFb-fP-hol"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DataCube Demo" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNX-Hp-nzZ">
+                                                <rect key="frame" x="82" y="30" width="250" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="VVt-Cb-Hvy"/>
+                                                    <constraint firstAttribute="width" constant="250" id="WOp-Uo-jll"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="kNX-Hp-nzZ" firstAttribute="centerX" secondItem="bg0-Fw-XT2" secondAttribute="centerX" id="4du-Vu-pMq"/>
+                                            <constraint firstItem="kNX-Hp-nzZ" firstAttribute="top" secondItem="bg0-Fw-XT2" secondAttribute="top" constant="30" id="GOZ-Wp-S6u"/>
+                                            <constraint firstItem="s43-IO-C5m" firstAttribute="centerX" secondItem="bg0-Fw-XT2" secondAttribute="centerX" id="HjO-xe-o2J"/>
+                                            <constraint firstItem="BPI-Ve-Bg1" firstAttribute="top" secondItem="kNX-Hp-nzZ" secondAttribute="bottom" constant="50" id="Ieh-Yp-Ybv"/>
+                                            <constraint firstAttribute="bottom" secondItem="MbN-GN-sfH" secondAttribute="bottom" constant="40" id="Qyy-Xe-ti9"/>
+                                            <constraint firstItem="BPI-Ve-Bg1" firstAttribute="leading" secondItem="bg0-Fw-XT2" secondAttribute="leading" constant="20" id="SdU-43-Daz"/>
+                                            <constraint firstItem="wb1-XU-EIQ" firstAttribute="top" secondItem="BPI-Ve-Bg1" secondAttribute="bottom" constant="80" id="bRU-aX-Uf6"/>
+                                            <constraint firstItem="MbN-GN-sfH" firstAttribute="centerX" secondItem="s43-IO-C5m" secondAttribute="centerX" id="fTY-Ph-oVY"/>
+                                            <constraint firstItem="MbN-GN-sfH" firstAttribute="top" secondItem="s43-IO-C5m" secondAttribute="bottom" constant="10" id="jrG-MC-fnI"/>
+                                            <constraint firstItem="wb1-XU-EIQ" firstAttribute="centerX" secondItem="bg0-Fw-XT2" secondAttribute="centerX" id="nw4-5e-vbS"/>
+                                            <constraint firstItem="s43-IO-C5m" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wb1-XU-EIQ" secondAttribute="bottom" constant="50" id="vqM-fm-eNz"/>
+                                            <constraint firstAttribute="trailing" secondItem="BPI-Ve-Bg1" secondAttribute="trailing" constant="20" id="yiR-ma-KO3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bg0-Fw-XT2" firstAttribute="leading" secondItem="7wC-mX-TTX" secondAttribute="leading" id="O5B-Fm-5tA"/>
+                                    <constraint firstItem="bg0-Fw-XT2" firstAttribute="top" secondItem="7wC-mX-TTX" secondAttribute="top" id="OcU-3E-qxi"/>
+                                    <constraint firstItem="bg0-Fw-XT2" firstAttribute="height" secondItem="7wC-mX-TTX" secondAttribute="height" multiplier="1.03896" id="OgU-2E-cK1"/>
+                                    <constraint firstAttribute="bottom" secondItem="bg0-Fw-XT2" secondAttribute="bottom" id="Vzm-9q-ex4"/>
+                                    <constraint firstItem="bg0-Fw-XT2" firstAttribute="width" secondItem="7wC-mX-TTX" secondAttribute="width" id="ejm-wA-ZV6"/>
+                                    <constraint firstAttribute="trailing" secondItem="bg0-Fw-XT2" secondAttribute="trailing" id="hH1-sY-H16"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7wC-mX-TTX" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="2o9-7t-zzZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7wC-mX-TTX" secondAttribute="trailing" id="Wzc-Jo-G42"/>
+                            <constraint firstItem="7wC-mX-TTX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cAz-Bd-Nar"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="7wC-mX-TTX" secondAttribute="top" id="qOV-bo-07v"/>
+                            <constraint firstItem="7wC-mX-TTX" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="z4t-5p-C3S"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="animationView" destination="wb1-XU-EIQ" id="P9l-JK-rD5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-130" y="19"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="wb1-XU-EIQ"/>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

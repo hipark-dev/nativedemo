@@ -1,0 +1,6 @@
+framework module Pods_DataCubeDemoTests {
+  umbrella header "Pods-DataCubeDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

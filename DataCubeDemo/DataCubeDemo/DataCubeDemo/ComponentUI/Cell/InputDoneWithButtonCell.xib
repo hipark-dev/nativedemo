@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InputDoneWithButtonCell" rowHeight="365" id="08g-FR-GjH" customClass="InputDoneWithButtonCell" customModule="TWBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="08g-FR-GjH" id="y5A-3v-deH">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdF-1T-snB" userLabel="Label - Sub Title">
+                        <rect key="frame" x="28" y="14" width="291" height="34.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MF1-pU-Yqt" userLabel="TextField" customClass="UISFSTextField" customModule="TWBank" customModuleProvider="target">
+                        <rect key="frame" x="28" y="48.5" width="248" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="FBD-pT-M0o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRG-UY-2MP" userLabel="View - Line">
+                        <rect key="frame" x="28" y="92.5" width="319" height="1"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="PUg-jd-RHN"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5o-hy-cMV">
+                        <rect key="frame" x="295" y="57" width="52" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="2A2-kf-lOh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="Resend">
+                            <color key="titleColor" red="0.0" green="0.80000000000000004" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-TZ-rCg">
+                        <rect key="frame" x="28" y="97.5" width="319" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rdF-1T-snB" firstAttribute="top" secondItem="y5A-3v-deH" secondAttribute="top" constant="14" id="5JC-xU-Hps"/>
+                    <constraint firstItem="rdF-1T-snB" firstAttribute="leading" secondItem="y5A-3v-deH" secondAttribute="leading" constant="28" id="6ZE-Qe-x4n"/>
+                    <constraint firstAttribute="bottom" secondItem="qOJ-TZ-rCg" secondAttribute="bottom" id="Fql-7n-0iJ"/>
+                    <constraint firstItem="qOJ-TZ-rCg" firstAttribute="top" secondItem="YRG-UY-2MP" secondAttribute="bottom" constant="4" id="G7u-Xm-uSQ"/>
+                    <constraint firstItem="MF1-pU-Yqt" firstAttribute="leading" secondItem="y5A-3v-deH" secondAttribute="leading" constant="28" id="Ket-dz-IK5"/>
+                    <constraint firstAttribute="trailing" secondItem="V5o-hy-cMV" secondAttribute="trailing" constant="28" id="Lsn-3H-H4E"/>
+                    <constraint firstItem="YRG-UY-2MP" firstAttribute="top" secondItem="MF1-pU-Yqt" secondAttribute="bottom" constant="7" id="Lz7-Rq-7um"/>
+                    <constraint firstItem="V5o-hy-cMV" firstAttribute="leading" secondItem="MF1-pU-Yqt" secondAttribute="trailing" constant="19" id="WGq-id-GTI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rdF-1T-snB" secondAttribute="trailing" constant="41" id="Wn1-FZ-tam"/>
+                    <constraint firstItem="MF1-pU-Yqt" firstAttribute="top" secondItem="rdF-1T-snB" secondAttribute="bottom" id="aTj-uz-ejx"/>
+                    <constraint firstItem="qOJ-TZ-rCg" firstAttribute="leading" secondItem="y5A-3v-deH" secondAttribute="leading" constant="28" id="hkI-Rf-yz5"/>
+                    <constraint firstAttribute="trailing" secondItem="qOJ-TZ-rCg" secondAttribute="trailing" constant="28" id="igp-tN-Brw"/>
+                    <constraint firstItem="YRG-UY-2MP" firstAttribute="leading" secondItem="y5A-3v-deH" secondAttribute="leading" constant="28" id="j6C-kB-QaT"/>
+                    <constraint firstItem="V5o-hy-cMV" firstAttribute="centerY" secondItem="MF1-pU-Yqt" secondAttribute="centerY" id="mCc-V2-aI6"/>
+                    <constraint firstAttribute="trailing" secondItem="YRG-UY-2MP" secondAttribute="trailing" constant="28" id="yGv-MU-Ng9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="actionButton" destination="V5o-hy-cMV" id="uyD-N8-7zs"/>
+                <outlet property="buttonHeightConstraint" destination="2A2-kf-lOh" id="y2d-kt-veD"/>
+                <outlet property="descriptionLabel" destination="qOJ-TZ-rCg" id="11n-pd-psf"/>
+                <outlet property="inputTextField" destination="MF1-pU-Yqt" id="x8v-YD-gYa"/>
+                <outlet property="lineView" destination="YRG-UY-2MP" id="FL1-EK-qcw"/>
+                <outlet property="subTitleLabel" destination="rdF-1T-snB" id="0wT-7q-a99"/>
+            </connections>
+            <point key="canvasLocation" x="-328.80000000000001" y="-171.36431784107947"/>
+        </tableViewCell>
+    </objects>
+</document>

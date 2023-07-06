@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ZipCodeCell" id="NOM-tH-rGW" customClass="ZipCodeCell" customModule="TWBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NOM-tH-rGW" id="ig4-gF-CU7">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-8J-bqj" userLabel="Zip Code Label">
+                        <rect key="frame" x="16" y="15" width="39" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="ZLm-LS-j3z"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="39" id="mc8-bO-cb1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b83-Ss-2oG" userLabel="City Name Label">
+                        <rect key="frame" x="72" y="15" width="303" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="ane-IT-DBb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDj-OB-c0j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hDj-OB-c0j" firstAttribute="width" secondItem="ig4-gF-CU7" secondAttribute="width" id="43h-kM-NnU"/>
+                    <constraint firstItem="hDj-OB-c0j" firstAttribute="height" secondItem="ig4-gF-CU7" secondAttribute="height" id="G7S-vC-ELq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JvI-8J-bqj" secondAttribute="bottom" constant="4" id="MpM-49-lc5"/>
+                    <constraint firstItem="JvI-8J-bqj" firstAttribute="top" secondItem="ig4-gF-CU7" secondAttribute="topMargin" constant="4" id="QFX-zs-gVi"/>
+                    <constraint firstItem="hDj-OB-c0j" firstAttribute="leading" secondItem="ig4-gF-CU7" secondAttribute="leading" id="TBY-wQ-T3E"/>
+                    <constraint firstAttribute="trailing" secondItem="b83-Ss-2oG" secondAttribute="trailing" id="Zqe-1M-T3d"/>
+                    <constraint firstItem="JvI-8J-bqj" firstAttribute="leading" secondItem="ig4-gF-CU7" secondAttribute="leadingMargin" id="a5d-on-plU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="b83-Ss-2oG" secondAttribute="bottom" constant="4" id="goA-V9-GdH"/>
+                    <constraint firstItem="b83-Ss-2oG" firstAttribute="leading" secondItem="JvI-8J-bqj" secondAttribute="trailing" constant="17" id="hJs-Wj-WlV"/>
+                    <constraint firstItem="b83-Ss-2oG" firstAttribute="top" secondItem="ig4-gF-CU7" secondAttribute="topMargin" constant="4" id="i2E-7x-jF6"/>
+                    <constraint firstItem="hDj-OB-c0j" firstAttribute="top" secondItem="ig4-gF-CU7" secondAttribute="top" id="vFl-vx-eD5"/>
+                    <constraint firstItem="b83-Ss-2oG" firstAttribute="centerY" secondItem="JvI-8J-bqj" secondAttribute="centerY" id="xcO-l4-VzN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="o2x-Jo-iL2"/>
+            <connections>
+                <outlet property="bankButton" destination="hDj-OB-c0j" id="3oh-Ew-bxZ"/>
+                <outlet property="cityDistrictLabel" destination="b83-Ss-2oG" id="efx-Oe-Nmo"/>
+                <outlet property="zipCodeLabel" destination="JvI-8J-bqj" id="i2f-oV-j0X"/>
+            </connections>
+            <point key="canvasLocation" x="-175" y="-44"/>
+        </tableViewCell>
+    </objects>
+</document>
