@@ -212,7 +212,7 @@ extension String {
                                                     .characterEncoding: String.Encoding.utf8.rawValue],
                                           documentAttributes: nil)
         } catch {
-            Logger.info("error: \(error)")
+            Logger.error("error: \(error)")
             return nil
         }
     }

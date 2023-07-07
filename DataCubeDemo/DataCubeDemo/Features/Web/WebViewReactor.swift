@@ -23,21 +23,45 @@ final class WebViewReactor: Reactor {
     }
     
     enum WebConstant {
-        static let hostURL: String = "http://localhost:8000/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg2OTM1NTgsImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.iwnlS8efgE4ZLEh8TxVkS_-IRx1OEbG8NA5PbtH_d9c"
-//        static let hostURL: String = "https://devfs.fingerservice.co.kr/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg2MDcwMjksImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.f9l68qTM_sNjIOikoX2G24RD4hnWiG132QY79SW4yjo"
+        static let hostURL: String = "http://localhost:8000/landing?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg3NzU1OTcsImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.O8srBVZGHR65isyvFerM83h5Rk25r4I85a7t3xH-72g"
+//        static let hostURL: String = "https://devfs.fingerservice.co.kr?groupCd=10001&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGFuZ3lvQDEiLCJleHAiOjE2ODg3NzU1OTcsImJpel9yZWdfbm8iOiIxMjA4NjE1ODgxIn0.O8srBVZGHR65isyvFerM83h5Rk25r4I85a7t3xH-72g"
+    }
+    
+    enum DatacubeService: String, Codable {
+        case PGRequest = "pgRequest"
+        case PGCallback = "pgCallback"
+        case PGResultMessage = "pgResultMessage"
+    }
+    
+    enum PaymentResultType: String, Codable {
+        case success = "success"
+        case fail = "fail"
+        case cancel = "cancel"
+    }
+    
+    struct DataCubeScriptMessage: Codable {
+        let service: DatacubeService
+        let parameter: String
     }
     
     enum Action {
         case viewDidLoad(LoadType)
         case loadRequest(URLRequest)
+        case receiveScriptMessage(String)
     }
     
     enum Mutation {
         case setRequest(URLRequest?)
+        case addWebView(URLRequest?)
+        case callScript(String?)
+        case callScriptWithPgResult(String?)
     }
     
     struct State {
         var request: URLRequest?
+        var addWebViewRequest: URLRequest?
+        var script: String?
+        var scriptWithPgResult: String?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -52,6 +76,8 @@ final class WebViewReactor: Reactor {
             return .just(load(urlStr: url))
         case let .loadRequest(request):
             return .just(Mutation.setRequest(request))
+        case let .receiveScriptMessage(message):
+            return .just(receiveScriptMessage(message: message))
         }
     }
     
@@ -60,14 +86,49 @@ final class WebViewReactor: Reactor {
         switch mutation {
         case let .setRequest(request):
             newState.request = request
+        case let .addWebView(request):
+            newState.addWebViewRequest = request
+        case let .callScript(script):
+            newState.script = script
+        case let .callScriptWithPgResult(script):
+            newState.scriptWithPgResult = script
         }
-        
         return newState
     }
-    
+
+}
+
+extension WebViewReactor {
     private func load(urlStr:String) -> Mutation {
         guard let url = URL(string: urlStr) else { return .setRequest(nil) }
         let request = URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: TimeInterval(60.0))
         return .setRequest(request)
     }
+    
+    private func receiveScriptMessage(message: String) -> Mutation {
+        Logger.debug("receiveScriptMessage = \(message)")
+        guard let jsonData = message.data(using: .utf8) else {
+            fatalError("JSON data convert Failed")
+        }
+        do {
+            let decoder = JSONDecoder()
+            let message = try decoder.decode(DataCubeScriptMessage.self, from: jsonData)
+            switch message.service {
+            case .PGRequest:
+                guard let url = URL(string: message.parameter) else { return .addWebView(nil)}
+                let request = URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData)
+                return .addWebView(request)
+            case .PGCallback:
+                let script = "\(DatacubeService.PGResultMessage)('\(message)')"
+                return .callScriptWithPgResult(script)
+            case .PGResultMessage: break
+            }
+        }catch {
+            Logger.error(error)
+        }
+        return .callScriptWithPgResult(nil)
+    }
 }
+
+
+
